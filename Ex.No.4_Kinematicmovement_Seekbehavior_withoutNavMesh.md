@@ -1,6 +1,6 @@
 # Ex.No: 4  Implementation of Kinematic movement -seek behavior in Unity
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:  18.08.2025                                                                          
+### REGISTER NUMBER : 212223240068
 ### AIM: 
 To write a program to simulate the process of seek behavior in Unity without NavigationMeshAgent. 
 ### Algorithm:
@@ -51,12 +51,41 @@ public class Script : MonoBehaviour
     }
 }
 ```
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class fleeScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public Transform target;  // The object to seek
+    public float speed = 5f;  // Movement speed
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (target == null) return;  // Exit if no target is assigned
+
+        // Calculate the desired direction
+        Vector3 direction = (transform.position-target.position).normalized;
+
+        // Move the object towards the target
+        transform.position += direction * speed * Time.deltaTime;
+    }
+}
+```
 ### Output:
 
+<img width="1910" height="982" alt="Screenshot 2025-08-18 094511" src="https://github.com/user-attachments/assets/4b852bf3-1030-4621-8f55-36c875caf090" />
 
 
 
-
+<img width="1419" height="929" alt="Screenshot 2025-08-18 094525" src="https://github.com/user-attachments/assets/0394cc10-aede-4a5a-9c6d-919a09c5ab1e" />
 
 
 
